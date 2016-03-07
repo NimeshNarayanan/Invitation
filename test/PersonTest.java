@@ -21,7 +21,7 @@ public class PersonTest {
         Address addr = new Address("alapuzha", "kerala", "india");
         Gender gender = Gender.Male;
         Person mohan = new Person(name, addr,gender, 28);
-        String expected = "mohan, lal\nalapuzha, kerala, india";
+        String expected = "mohan lal\nalapuzha, kerala, india";
         assertEquals(expected, mohan.getAddress(true, ", "));
 
         expected = "lal, mohan\nalapuzha, kerala, india";
@@ -44,7 +44,7 @@ public class PersonTest {
         Address addr = new Address("alapuzha", "kerala", "india");
         Gender gender = Gender.Male;
         Person mohan = new Person(name, addr,gender, 28);
-        String expected = "Mr mohan, lal, india";
+        String expected = "Mr mohan lal, india";
         assertEquals(expected, mohan.getNameWithCountry(true, ", "));
         expected = "Mr lal, mohan, india";
         assertEquals(expected, mohan.getNameWithCountry(false, ", "));
