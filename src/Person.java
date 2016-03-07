@@ -1,18 +1,38 @@
-public class Person{
+public class Person {
     protected int age;
     protected Address address;
     protected Name name;
+    protected Gender gender;
 
-    public Person(Name name,int age, Address address) {
+    public Person(Name name,  Address address,Gender gender,int age) {
         this.name = name;
-        this.age = age;
         this.address = address;
+        this.gender = gender;
+        this.age = age;
+    }
+    private String getNameByChoice(boolean choice) {
+        return (choice) ? name.getFirstLastName() : name.getLastFirstName();
     }
 
-    public String getFirstLastName(String seperator) {
-        return name.getFirstLastName(seperator);
+    public String getAddress() {
+        return getAddress(true, " ");
     }
-    public String getLastFirstName(String seperator){
-        return name.getLastFirstName(seperator);
+    public String getNameWithTitle(boolean choice){
+       return  gender.title()+getNameByChoice(choice);
     }
+    public String getAddress(boolean choice, String separator) {
+        String name = getNameByChoice(choice);
+        return name + "\n" + address.toString();
+    }
+
+    public String getNameWithCountry() {
+        return getNameWithCountry(true, " ");
+    }
+
+    public String getNameWithCountry(boolean choice, String separator) {
+        System.out.printf("gender"+gender);
+        String name = getNameByChoice(choice);
+        return gender.title()+name + ", " + address.getCountry();
+    }
+
 }

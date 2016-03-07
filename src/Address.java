@@ -8,4 +8,24 @@ public class Address {
         this.state = state;
         this.country = country;
     }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public String toString() {
+        return city + ", " +
+                state + ", " +
+                country;
+
+
+    }
 }
