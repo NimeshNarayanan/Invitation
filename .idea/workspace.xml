@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="774a3ec1-857b-45a1-ae13-c9fa9410d785" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/CliTest.java" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/build/build.xml.tld" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TODO" afterPath="$PROJECT_DIR$/TODO" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/GenderTest.java" afterPath="$PROJECT_DIR$/test/GenderTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/PersonTest.java" afterPath="$PROJECT_DIR$/test/PersonTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Invitation.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -877,7 +874,7 @@
       <workItem from="1456831986012" duration="9810000" />
       <workItem from="1456846111190" duration="318000" />
       <workItem from="1456998035244" duration="13114000" />
-      <workItem from="1457066766973" duration="18072000" />
+      <workItem from="1457066766973" duration="18746000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented classes Addres,Female,Male,Naame,Person&#10;">
       <created>1456846369000</created>
@@ -921,7 +918,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41314000" />
+    <option name="totallyTimeSpent" value="41988000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1676" height="1028" extended-state="0" />
