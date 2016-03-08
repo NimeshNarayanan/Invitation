@@ -8,7 +8,7 @@ public class PersonTest {
     public void testGetAddressGivesRepresentationOfAddress() throws Exception {
         Name name = new Name("mohan", "lal");
         Address addr = new Address("alapuzha", "kerala", "india");
-        Gender gender = Gender.Male;
+        Gender gender = Gender.MALE;
         Person dulqur = new Person(name, addr,gender, 28);
         String expected = "mohan lal\nalapuzha, kerala, india";
         assertEquals(expected, dulqur.getAddress());
@@ -19,7 +19,7 @@ public class PersonTest {
     public void testGetAddressWithOptionsGiven() throws Exception {
         Name name = new Name("mohan", "lal");
         Address addr = new Address("alapuzha", "kerala", "india");
-        Gender gender = Gender.Male;
+        Gender gender = Gender.MALE;
         Person mohan = new Person(name, addr,gender, 28);
         String expected = "mohan lal\nalapuzha, kerala, india";
         assertEquals(expected, mohan.getAddress(true, ", "));
@@ -32,7 +32,7 @@ public class PersonTest {
     public void testGetAddressWithCountry() throws Exception {
         Name name = new Name("mohan", "lal");
         Address addr = new Address("alapuzha", "kerala", "india");
-        Gender gender = Gender.Male;
+        Gender gender = Gender.MALE;
         Person mohan = new Person(name, addr,gender, 28);
         String expected = "Mr mohan lal, india";
         assertEquals(expected, mohan.getNameWithCountry());
@@ -42,7 +42,7 @@ public class PersonTest {
     public void testGetAddressWithCountryWithGivenOptions() throws Exception {
         Name name = new Name("mohan", "lal");
         Address addr = new Address("alapuzha", "kerala", "india");
-        Gender gender = Gender.Male;
+        Gender gender = Gender.MALE;
         Person mohan = new Person(name, addr,gender, 28);
         String expected = "Mr mohan lal, india";
         assertEquals(expected, mohan.getNameWithCountry(true));
@@ -54,7 +54,7 @@ public class PersonTest {
     public void testgetNameWithTitleWillGiveFullNameWithTitle() throws Exception {
         Name name = new Name("mohan", "lal");
         Address addr = new Address("alapuzha", "kerala", "india");
-        Gender gender = Gender.Male;
+        Gender gender = Gender.MALE;
         Person mohan = new Person(name, addr,gender, 28);
         String expected = "Mr mohan lal";
         assertEquals(expected, mohan.getNameWithTitle(true));
@@ -63,7 +63,7 @@ public class PersonTest {
     public void testgetNameWithTitleWillGiveFullNameFormalyWithTitle() throws Exception {
         Name name = new Name("Mohan", "Lal");
         Address addr = new Address("alapuzha", "kerala", "india");
-        Gender gender = Gender.Male;
+        Gender gender = Gender.MALE;
         Person mohan = new Person(name, addr,gender, 28);
         String expected = "Mr Lal, Mohan";
         assertEquals(expected, mohan.getNameWithTitle(false));

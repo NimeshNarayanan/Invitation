@@ -36,5 +36,7 @@ public class Person {
     public boolean isAgeGrater(int age){
         return this.age>age;
     }
-
+    public boolean isFromCountry(String country){
+        return country.equals(address.getCountry());
+    }
 }

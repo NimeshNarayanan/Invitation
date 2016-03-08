@@ -5,9 +5,9 @@ import static org.junit.Assert.*;
 /**
  * Created by nimeshp on 08/03/16.
  */
-public class InvitationCardsTest {
+public class GuestsTest {
     @Test
-    public void testName() throws Exception {
+    public void test_getInformalName_will_give_() throws Exception {
 
     }
 }

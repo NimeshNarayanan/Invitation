@@ -2,14 +2,14 @@
  * Created by nimeshp on 07/03/16.
  */
 public enum Gender {
-    Male {
+    MALE {
             @Override
             public String title(){
 
                 return "Mr ";
             }
         },
-        Female {
+        FEMALE {
             @Override
             public String title(){
 
