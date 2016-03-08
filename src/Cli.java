@@ -10,9 +10,9 @@ public class Cli {
         this.args = args;
 
         options.addOption("h", "help", false, "Show help");
-        options.addOption("fl", "char", false, "First last name");
-        options.addOption("lf", "char", false, "Last first name");
-        options.addOption("nc", "char", false, "Name with Country");
+        options.addOption("f", "firstLast", false, "First last name");
+        options.addOption("l", "lastFirst", false, "Last first name");
+        options.addOption("c", "nameWithCountry", true, "Name with Country");
 
     }
 

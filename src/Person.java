@@ -4,7 +4,7 @@ public class Person {
     protected Name name;
     protected Gender gender;
 
-    public Person(Name name,  Address address,Gender gender,int age) {
+    public Person(Name name, Address address,Gender gender,int age) {
         this.name = name;
         this.address = address;
         this.gender = gender;
@@ -26,13 +26,15 @@ public class Person {
     }
 
     public String getNameWithCountry() {
-        return getNameWithCountry(true, " ");
+        return getNameWithCountry(true);
     }
 
-    public String getNameWithCountry(boolean choice, String separator) {
-        System.out.printf("gender"+gender);
+    public String getNameWithCountry(boolean choice) {
         String name = getNameByChoice(choice);
         return gender.title()+name + ", " + address.getCountry();
+    }
+    public boolean isAgeGrater(int age){
+        return this.age>age;
     }
 
 }

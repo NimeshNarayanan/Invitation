@@ -45,9 +45,9 @@ public class PersonTest {
         Gender gender = Gender.Male;
         Person mohan = new Person(name, addr,gender, 28);
         String expected = "Mr mohan lal, india";
-        assertEquals(expected, mohan.getNameWithCountry(true, ", "));
+        assertEquals(expected, mohan.getNameWithCountry(true));
         expected = "Mr lal, mohan, india";
-        assertEquals(expected, mohan.getNameWithCountry(false, ", "));
+        assertEquals(expected, mohan.getNameWithCountry(false));
     }
 
     @Test
