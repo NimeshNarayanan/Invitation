@@ -1,10 +1,10 @@
 public class Person {
-    protected int age;
     protected Address address;
     protected Name name;
     protected Gender gender;
+    protected Age age;
 
-    public Person(Name name, Address address,Gender gender,int age) {
+    public Person(Name name, Address address,Gender gender,Age age) {
         this.name = name;
         this.address = address;
         this.gender = gender;
@@ -34,7 +34,7 @@ public class Person {
         return gender.title()+name + ", " + address.getCountry();
     }
     public boolean isAgeGrater(int age){
-        return this.age>age;
+        return this.age.isGraterThan(age);
     }
     public boolean isFromCountry(String country){
         return country.equals(address.getCountry());

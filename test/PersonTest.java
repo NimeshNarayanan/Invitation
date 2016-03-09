@@ -9,7 +9,8 @@ public class PersonTest {
         Name name = new Name("mohan", "lal");
         Address addr = new Address("alapuzha", "kerala", "india");
         Gender gender = Gender.MALE;
-        Person dulqur = new Person(name, addr,gender, 28);
+        Age age = new Age(28);
+        Person dulqur = new Person(name, addr,gender, age);
         String expected = "mohan lal\nalapuzha, kerala, india";
         assertEquals(expected, dulqur.getAddress());
 
@@ -20,7 +21,8 @@ public class PersonTest {
         Name name = new Name("mohan", "lal");
         Address addr = new Address("alapuzha", "kerala", "india");
         Gender gender = Gender.MALE;
-        Person mohan = new Person(name, addr,gender, 28);
+        Age age = new Age(28);
+        Person mohan = new Person(name, addr,gender, age);
         String expected = "mohan lal\nalapuzha, kerala, india";
         assertEquals(expected, mohan.getAddress(true, ", "));
 
@@ -33,7 +35,8 @@ public class PersonTest {
         Name name = new Name("mohan", "lal");
         Address addr = new Address("alapuzha", "kerala", "india");
         Gender gender = Gender.MALE;
-        Person mohan = new Person(name, addr,gender, 28);
+        Age age = new Age(28);
+        Person mohan = new Person(name, addr,gender, age);
         String expected = "Mr mohan lal, india";
         assertEquals(expected, mohan.getNameWithCountry());
     }
@@ -43,7 +46,8 @@ public class PersonTest {
         Name name = new Name("mohan", "lal");
         Address addr = new Address("alapuzha", "kerala", "india");
         Gender gender = Gender.MALE;
-        Person mohan = new Person(name, addr,gender, 28);
+        Age age = new Age(28);
+        Person mohan = new Person(name, addr,gender, age);
         String expected = "Mr mohan lal, india";
         assertEquals(expected, mohan.getNameWithCountry(true));
         expected = "Mr lal, mohan, india";
@@ -55,7 +59,8 @@ public class PersonTest {
         Name name = new Name("mohan", "lal");
         Address addr = new Address("alapuzha", "kerala", "india");
         Gender gender = Gender.MALE;
-        Person mohan = new Person(name, addr,gender, 28);
+        Age age = new Age(23);
+        Person mohan = new Person(name, addr,gender, age);
         String expected = "Mr mohan lal";
         assertEquals(expected, mohan.getNameWithTitle(true));
     }
@@ -64,7 +69,8 @@ public class PersonTest {
         Name name = new Name("Mohan", "Lal");
         Address addr = new Address("alapuzha", "kerala", "india");
         Gender gender = Gender.MALE;
-        Person mohan = new Person(name, addr,gender, 28);
+        Age age = new Age(28);
+        Person mohan = new Person(name, addr,gender, age);
         String expected = "Mr Lal, Mohan";
         assertEquals(expected, mohan.getNameWithTitle(false));
     }

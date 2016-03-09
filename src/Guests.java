@@ -20,7 +20,7 @@ public class Guests {
         }
         return  names;
     }
-    public String[] gtformalName(){
+    public String[] getFormalName(){
         String []names = new String[people.size()];
         int count = 0;
         for (Person person : people) {

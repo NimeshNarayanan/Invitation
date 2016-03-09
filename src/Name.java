@@ -7,14 +7,11 @@ public class Name{
         this.lastName =lastName;
     }
 
-    public String getFirstLastName(){
-
+    public String getFirstLastName() {
         return firstName+" "+lastName;
     }
     public String getLastFirstName(){
-      return lastName+", "+firstName;
+        return lastName+", "+firstName;
     }
-
-
 
 }
