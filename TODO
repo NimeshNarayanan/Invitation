@@ -15,6 +15,13 @@ Output format:-
 ./printLabel_firstLast.sh [records.txt]
 ./printLabel_lastFirst.sh [records.txt]
 
+Options
+-------
+    "-h" OR "--help"          --->Description = Show help
+    "-f" OR "--firstLast"       -->Description  = First last name
+    "-l" OR "--lastFirst"       -->Description  = Last first name
+    "-c" OR "--nameWithCountry" -->Description  = Name with Country Name
+
 $ cat records.txt
 Nimesh, P, mMale, 24, Vilayil, Kerala, India
 Ashwin, Kumar, Male, 20, fortcochi, Kerala, India
@@ -31,4 +38,29 @@ firstName,lastName,gender,age,city,state,country
 Reading guest records from the file
 getting guest labels
 ------------------------------------------------
-Task list :
+TODO for library-
+
+1.decide entities and create tests for each entities.
+Address - takes ->
+                    City,State,Country
+Name -  takes   ->
+                    first name,last name
+Gender - takes  ->
+                    Male,Female(It will give prefix according to gender)
+Person - takes  ->
+                    Name ,Address, Age,Gender
+Guests  - takes ->
+                    Person
+
+Name - (included prefix)
+Gender - (using enum)
+2. person should hold the record of information needed.so person is the main entity.
+3. Person should handle the both choices for representing the name(As mentioned above) .
+
+
+---------------------------------------------------------------------------------------------------------
+TODO for main-
+
+1->Read File Name from command line
+2->Convert the file data into corresponding objects.
+3->Option handling.
