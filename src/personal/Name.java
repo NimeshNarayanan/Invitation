@@ -1,3 +1,4 @@
+package personal;
 public class Name{
     protected String firstName;
     protected String lastName;
@@ -14,4 +15,11 @@ public class Name{
         return lastName+", "+firstName;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
 }

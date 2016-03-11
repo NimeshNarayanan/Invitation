@@ -1,4 +1,5 @@
 import org.junit.Test;
+import personal.Age;
 
 import static org.junit.Assert.*;
 

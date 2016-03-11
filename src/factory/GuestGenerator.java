@@ -1,3 +1,8 @@
+package factory;
+
+import handlers.Guests;
+import personal.*;
+
 public class GuestGenerator {
     protected String guestRecords;
 
