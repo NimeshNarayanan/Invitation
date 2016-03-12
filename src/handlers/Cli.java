@@ -13,6 +13,7 @@ public class Cli {
         options.addOption("f", "firstLast", false, "First last name");
         options.addOption("l", "lastFirst", false, "Last first name");
         options.addOption("c", "nameWithCountry", true, "Name with Country");
+        options.addOption("a", "nameWithAgeGreater", true, "Name with Age Greater");
 
     }
 

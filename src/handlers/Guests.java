@@ -1,4 +1,5 @@
 package handlers;
+
 import personal.Person;
 
 import java.util.ArrayList;
@@ -6,14 +7,16 @@ import java.util.Iterator;
 
 public class Guests {
     ArrayList<Person> people;
+
     public Guests() {
         this.people = new ArrayList<>();
     }
-    public void addGuest(Person guest){
+
+    public void addGuest(Person guest) {
         this.people.add(guest);
     }
 
-    public Guests filterByCountry(String country){
+    public Guests filterByCountry(String country) {
         Guests peopleFromCountry = new Guests();
 
         for (Person person : people)
@@ -22,7 +25,8 @@ public class Guests {
 
         return peopleFromCountry;
     }
-    public Guests getPersonsAgeGreaterThan(int age){
+
+    public Guests getPersonsAgeGreaterThan(int age) {
         Guests peopleWithAgeGreater = new Guests();
 
         for (Person person : people)
@@ -35,7 +39,8 @@ public class Guests {
     public Iterator iterator() {
         return people.iterator();
     }
-    public int getSize(){
+
+    public int getSize() {
         return people.size();
     }
 }

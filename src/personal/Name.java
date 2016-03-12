@@ -22,4 +22,7 @@ public class Name{
     public String getLastName() {
         return lastName;
     }
+
+//    public String parse(LabelGeneratorTest labelGeneratorTest,boolean formatChoice) {
+//    }
 }

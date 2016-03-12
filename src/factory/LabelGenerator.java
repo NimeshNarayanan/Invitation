@@ -1,3 +1,6 @@
+package factory;
+
+import factory.InvitationLabelGenerator;
 import handlers.Guests;
 import personal.Person;
 
@@ -25,4 +28,7 @@ public class LabelGenerator implements InvitationLabelGenerator {
         }
         return list;
     }
+//    public String getNameByFormat(boolean formatChoice){
+//        String formatedName =
+//    }
 }

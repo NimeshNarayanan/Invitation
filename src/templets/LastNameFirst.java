@@ -1,3 +1,6 @@
+package templets;
+
+import factory.InvitationLabelGenerator;
 import handlers.Guests;
 import personal.Person;
 

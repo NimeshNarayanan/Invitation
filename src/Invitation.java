@@ -1,8 +1,11 @@
 import factory.GuestGenerator;
+import factory.InvitationLabelGenerator;
+import factory.LabelGenerator;
 import handlers.Cli;
 import handlers.FileToProcess;
 import handlers.Guests;
 import org.apache.commons.cli.*;
+import templets.LastNameFirst;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -26,26 +29,23 @@ public class Invitation {
         String data = FileToProcess.readAndStringfy(files[0]);
         GuestGenerator guestGenerator = new GuestGenerator(data);
         Guests people = guestGenerator.createPersonDetails();
-        Guests sortedListOfPeople = people;
+        Guests filteredListOfPeople = people;
         for (int i = 0; i < options.length; i++) {
             String command = options[i].getOpt();
-            System.out.println("hai"+command);
+            System.out.println("hai"+options[i]);
             switch (command) {
                 case "c":
-                    sortedListOfPeople = people.filterByCountry(options[i].getValue());
-//                    people.setTemplate(new LabelGenerator());
-//                    people.setTemplate(new LastNameFirst());
+                    filteredListOfPeople = filteredListOfPeople.filterByCountry(options[i].getValue());
                     break;
                 case "a":
-                    sortedListOfPeople = people.getPersonsAgeGreaterThan(Integer.parseInt(options[i].getValue()));
-//                    people.setTemplate(new FirstNameFirst());
+                    filteredListOfPeople = filteredListOfPeople.getPersonsAgeGreaterThan(Integer.parseInt(options[i].getValue()));
                     break;
             }
         }
 
 //        LabelGenerator labelGenerator = new LabelGenerator(people);
 //        ArrayList<String> list = labelGenerator.printFullNameWithPrefix(true);
-        printLabel(sortedListOfPeople,false);
+        printLabel(filteredListOfPeople,false);
 
     }
 
