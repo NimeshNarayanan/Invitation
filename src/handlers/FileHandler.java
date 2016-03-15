@@ -6,7 +6,7 @@ import java.io.IOException;
 /**
  * Created by nimeshp on 07/03/16.
  */
-public class FileToProcess {
+public class FileHandler {
     public static  String readAndStringfy(String fileToRead) throws IOException {
         String fileContent;
         File file  = new File(fileToRead);

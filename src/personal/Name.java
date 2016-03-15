@@ -1,4 +1,7 @@
 package personal;
+
+import factory.LabelGenerator;
+
 public class Name{
     protected String firstName;
     protected String lastName;
@@ -8,21 +11,7 @@ public class Name{
         this.lastName =lastName;
     }
 
-    public String getFirstLastName() {
-        return firstName+" "+lastName;
+    public void formatName(LabelGenerator labelGenerator, boolean nameFormat) {
+        labelGenerator.getNameByFormat(firstName,lastName,nameFormat);
     }
-    public String getLastFirstName(){
-        return lastName+", "+firstName;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-//    public String parse(LabelGeneratorTest labelGeneratorTest,boolean formatChoice) {
-//    }
 }

@@ -1,3 +1,4 @@
+package handlers;
 import handlers.Cli;
 import org.apache.commons.cli.CommandLine;
 import org.junit.Test;

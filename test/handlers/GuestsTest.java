@@ -1,3 +1,5 @@
+package handlers;
+
 import factory.GuestGenerator;
 import handlers.Guests;
 import org.junit.Before;

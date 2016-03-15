@@ -1,21 +1,18 @@
 import factory.GuestGenerator;
-import factory.InvitationLabelGenerator;
 import factory.LabelGenerator;
 import handlers.Cli;
-import handlers.FileToProcess;
+import handlers.FileHandler;
 import handlers.Guests;
 import org.apache.commons.cli.*;
-import templets.LastNameFirst;
 
 import java.io.IOException;
 import java.util.ArrayList;
-//import java.util.List;
 
 public class Invitation {
-    public static void printLabel(Guests listOfPeople, boolean isLastNameFirst){
-        InvitationLabelGenerator labelGenerator = isLastNameFirst ? new LastNameFirst(listOfPeople) : new LabelGenerator(listOfPeople);
-        ArrayList<String> list = labelGenerator.parsePeople();
-        list.forEach(System.out::println);
+    public static void printLabel(ArrayList<String> listOfLabel){
+        for (String label : listOfLabel) {
+            System.out.printf(label);
+        }
     }
     public static void main(String[] args)throws IOException {
 
@@ -26,26 +23,27 @@ public class Invitation {
 
 
         System.out.println("files " + files[0]);
-        String data = FileToProcess.readAndStringfy(files[0]);
+        String data = FileHandler.readAndStringfy(files[0]);
         GuestGenerator guestGenerator = new GuestGenerator(data);
         Guests people = guestGenerator.createPersonDetails();
-        Guests filteredListOfPeople = people;
-        for (int i = 0; i < options.length; i++) {
-            String command = options[i].getOpt();
-            System.out.println("hai"+options[i]);
+        Boolean nameFormatChoice = true;
+        for (Option option : options) {
+            String command = option.getOpt();
             switch (command) {
+                case "l":
+                    nameFormatChoice = false;
+                    break;
                 case "c":
-                    filteredListOfPeople = filteredListOfPeople.filterByCountry(options[i].getValue());
+                    people = people.filterByCountry(option.getValue());
                     break;
                 case "a":
-                    filteredListOfPeople = filteredListOfPeople.getPersonsAgeGreaterThan(Integer.parseInt(options[i].getValue()));
+                    people = people.getPersonsAgeGreaterThan(Integer.parseInt(option.getValue()));
                     break;
             }
         }
 
-//        LabelGenerator labelGenerator = new LabelGenerator(people);
-//        ArrayList<String> list = labelGenerator.printFullNameWithPrefix(true);
-        printLabel(filteredListOfPeople,false);
+        ArrayList<String> listOfLabel = people.setTemplet(new LabelGenerator(),nameFormatChoice);
+        printLabel(listOfLabel);
 
     }
 

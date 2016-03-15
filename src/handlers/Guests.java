@@ -1,5 +1,6 @@
 package handlers;
 
+import factory.LabelGenerator;
 import personal.Person;
 
 import java.util.ArrayList;
@@ -35,6 +36,17 @@ public class Guests {
 
         return peopleWithAgeGreater;
     }
+
+    public ArrayList<String> setTemplet(LabelGenerator labelGenerator,boolean formatChoice) {
+        ArrayList<String> formatedDetails = new ArrayList<>();
+        for (Person person : people) {
+            String label = person.useLabel(labelGenerator, formatChoice);
+            formatedDetails.add(label);
+        }
+        return formatedDetails;
+    }
+
+    ;
 
     public Iterator iterator() {
         return people.iterator();

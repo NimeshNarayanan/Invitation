@@ -1,34 +1,30 @@
 package factory;
 
-import factory.InvitationLabelGenerator;
-import handlers.Guests;
-import personal.Person;
+public class LabelGenerator {
+    private String formatedName;
+    private String address;
+    private String formatedPersonDetail;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-
-public class LabelGenerator implements InvitationLabelGenerator {
-    private Guests guests;
-
-    public LabelGenerator(Guests guests) {
-        this.guests = guests;
+    public void getNameByFormat(String firstName,String lastName,boolean formatChoice){
+       formatedName = formatChoice?firstName+" "+lastName:lastName+", "+firstName;
     }
 
-
-
-    public ArrayList<String> parsePeople() {
-        ArrayList<String> list = new ArrayList<>();
-        Iterator iterator = guests.iterator();
-        while (iterator.hasNext()){
-            Person person = (Person) iterator.next();
-            list.add(String.format("%s %s %s\n%s",person.getGender().toString(),
-                                    person.getName().getFirstName(),
-                                    person.getName().getLastName(),
-                                    person.getAddress().getCountry()));
-        }
-        return list;
+    public void getAddressByFormat(String city, String state, String country) {
+        address = String.format("%s, %s,\n%s",city,state,country);
     }
-//    public String getNameByFormat(boolean formatChoice){
-//        String formatedName =
-//    }
+    public void getFormatedPersonDetails(String gender){
+       formatedPersonDetail = String.format("%s %s\n%s",gender,formatedName,address);
+    }
+
+    public String getFormatedPersonDetails() {
+        return formatedPersonDetail+"\n";
+    }
+
+    public String getFormatedName() {
+        return formatedName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
 }
